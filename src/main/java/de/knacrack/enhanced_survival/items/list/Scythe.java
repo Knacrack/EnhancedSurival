@@ -3,12 +3,8 @@ package de.knacrack.enhanced_survival.items.list;
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import de.knacrack.enhanced_survival.items.IItem;
-import org.bukkit.Bukkit;
-import org.bukkit.Color;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Particle;
+import de.knacrack.enhanced_survival.items.ICustomItem;
+import org.bukkit.*;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import de.knacrack.enhanced_survival.Main;
 import de.knacrack.enhanced_survival.utils.ItemAPI;
 
-public class Scythe implements IItem, Listener {
+public class Scythe implements ICustomItem, Listener {
 
     private static final ItemStack item = new ItemAPI(Material.NETHERITE_HOE).addItemFlags(ItemFlag.HIDE_UNBREAKABLE).isUnbreakable(true).setName("§6§lScythe").get();
 
@@ -34,6 +30,16 @@ public class Scythe implements IItem, Listener {
     @Override
     public ItemStack getItem() {
         return item;
+    }
+
+    @Override
+    public int getId() {
+        return 0;
+    }
+
+    @Override
+    public String getItemName() {
+        return null;
     }
 
 
@@ -135,6 +141,11 @@ public class Scythe implements IItem, Listener {
         location.getWorld().spawnParticle(Particle.REDSTONE, location.add(vector), 1, 0f, 0, 0, 0, dust);
 
         offsetLocation.getWorld().getNearbyEntities(offsetLocation, 1, 1, 1).stream().filter(entity -> entity instanceof LivingEntity).forEach(e -> ((LivingEntity) e).damage(10));
+    }
+
+    @Override
+    public @NotNull NamespacedKey getKey() {
+        return null;
     }
 
     //    class circle {

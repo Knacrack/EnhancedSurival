@@ -66,7 +66,7 @@ public class RespawnHeart extends ListenerConstructor implements ICustomItem {
         EntityType entityType = entity.getType();
 
         if(Utils.isZombie(entityType)) {
-            if(RANDOM.nextInt(500) == 0) { // chance of 0.2%
+            if(RANDOM.nextInt(1000) == 0) { // chance of 0.1%
                 entity.getWorld().dropItem(event.getEntity().getLocation(), getItem());
             }
         }

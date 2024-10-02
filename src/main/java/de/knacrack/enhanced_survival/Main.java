@@ -19,6 +19,7 @@ import de.knacrack.enhanced_survival.modules.backpack.Backpack;
 import de.knacrack.enhanced_survival.modules.playerstats.PlayerStats;
 import de.knacrack.enhanced_survival.modules.playerstats.PlayerStatsOld;
 import de.knacrack.enhanced_survival.modules.scoreboard.ServerScoreboard;
+import de.knacrack.enhanced_survival.utils.listeners.Listener;
 import de.knacrack.enhanced_survival.utils.runnables.PlayerStatsSaveRunnable;
 import de.knacrack.enhanced_survival.utils.runnables.PlayerUpdateHealthRunnable;
 import org.bukkit.Bukkit;
@@ -47,6 +48,8 @@ public class Main extends JavaPlugin {
         instance = this;
 
         // Listener
+        Listener listener;
+
         new PlayerJoinListener();
         new PlayerQuitListener();
         new PlayerDieListener();
@@ -55,6 +58,7 @@ public class Main extends JavaPlugin {
         new PlayerChatListener();
         new EntityDestroyFarmlandListener();
         new EntityDamageListener();
+        new SnowmanTurretListener();
 
         // Commands
         new InvseeCommand();
@@ -81,6 +85,7 @@ public class Main extends JavaPlugin {
         customItemSet.add(new de.knacrack.enhanced_survival.items.list.Backpack());
         customItemSet.add(new RespawnHeart());
         customItemSet.add(new TimberAxe());
+        customItemSet.add(new Pokeball());
 
         new Backpack();
 

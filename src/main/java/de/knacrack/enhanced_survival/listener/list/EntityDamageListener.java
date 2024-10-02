@@ -38,6 +38,10 @@ public class EntityDamageListener extends ListenerConstructor {
             spawnParticle(location, 14, 0.2, 1, 0.2, speed, Material.TNT);
         } else if(entity.getType() == EntityType.ENDERMAN || entity.getType() == EntityType.ENDERMITE) {
             spawnParticle(location, 14, 0.2, 1, 0.2, speed, Material.PURPLE_SHULKER_BOX);
+        } else if(entity.getType() == EntityType.STRAY || entity.getType() == EntityType.POLAR_BEAR) {
+            spawnParticle(location, 14, 0.2, 1, 0.2, speed, Material.BLUE_ICE);
+        } else if(entity.getType() == EntityType.HUSK) {
+            spawnParticle(location, 14, 0.2, 1, 0.2, speed, Material.SAND);
         } else {
             spawnParticle(location, 14, 0.2, 1, 0.2, speed, Material.REDSTONE_BLOCK);
         }

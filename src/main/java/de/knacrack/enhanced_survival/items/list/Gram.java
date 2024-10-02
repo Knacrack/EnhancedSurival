@@ -33,11 +33,10 @@ public class Gram extends ListenerConstructor implements ICustomItem {
         ItemStack itemStack = new ItemAPI(Material.NETHERITE_SWORD).isUnbreakable(true).setName(net.md_5.bungee.api.ChatColor.of("#4B0082") + "§l" + getItemName())
                 .addLore(ChatColor.GRAY + "Das Schwert eines Königs!").get();
 
-        AttributeModifier attackSpeed = new AttributeModifier(UUID.randomUUID(), "generic.attackSpeed", -1.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        AttributeModifier attackDamage = new AttributeModifier(UUID.randomUUID(), "generic.attackDamage", 15, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        AttributeModifier knockbackResistance = new AttributeModifier(UUID.randomUUID(), "generic.knockbackResistance", 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-        AttributeModifier armor = new AttributeModifier(UUID.randomUUID(), "generic.armor", 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
-
+        AttributeModifier attackSpeed = new AttributeModifier(UUID.randomUUID(), Attribute.GENERIC_ATTACK_SPEED.name(), -1.8, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        AttributeModifier attackDamage = new AttributeModifier(UUID.randomUUID(), Attribute.GENERIC_ATTACK_DAMAGE.name(), 15, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        AttributeModifier knockbackResistance = new AttributeModifier(UUID.randomUUID(), Attribute.GENERIC_KNOCKBACK_RESISTANCE.name(), 0.1, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
+        AttributeModifier armor = new AttributeModifier(UUID.randomUUID(), Attribute.GENERIC_ARMOR.name(), 3, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.HAND);
         ItemMeta meta = itemStack.getItemMeta();
 
         meta.addAttributeModifier(Attribute.GENERIC_ATTACK_SPEED, attackSpeed);
