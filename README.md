@@ -1,2 +1,2 @@
 # EnhancedSurival
-EnhancedSurvival is a Minecraft Plugin written with Paper.
+EnhancedSurvival is a Minecraft 1.19.2 Plugin written with Paper.
